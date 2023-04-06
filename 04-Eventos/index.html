@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula de JQuerY_Seletores</title>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur suscipit quas natus? Aliquid temporibus debitis, 
+        nostrum corrupti consequuntur recusandae dolore fugiat dolor reprehenderit deleniti! Nesciunt ipsum ex nisi praesentium fugiat.
+
+    </p>
+    <p id="teste">Isso é só um teste</p>
+    <p class="p-yellow">Outro Parágrafo</p>
+    <hr>
+    <input id="campotexto" type="text" placeholder="digite um texto" style="padding: 50px;">
+    
+    <button id="botao" style="padding: 50px;">Clique aqui</button>
+
+
+    <script src="js/jquery-3.6.4.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#botao").on({
+                mouseenter: function () {
+                    $(this).css('background-color','red');
+                },
+                click: function () {
+                    $(this).css('background-color', 'blue');
+                },
+                mouseleave: function () {
+                    $(this).css('background-color', 'gray');
+                }
+            
+                
+            })
+        });       
+    </script>
+    <!-- <script>
+        $(document).ready(function() {
+           $("#botao").click(function() {
+               alert('Clicou no botão!');               
+           });
+        });
+    </script>    -->
+    <!-- <script>
+        $(document).ready(function() {
+           $('#botao').click(function() {
+               //aqui dentro o seu codigo
+               $('p').hide();  
+               $('div').hide(); 
+               $('hr').hide();              
+           });
+        });
+    </script> -->
+    <!-- <script>
+        $(document).ready(function() {
+           $('#botao').mouseenter(function () {
+               //aqui dentro o seu codigo
+               // pode ser utilizado as funcões = mouseleave/ mouseDown/ mouseup/mouse/enter
+              $(this).text('Saiu o mouse');
+               //aqui dentro o seu codigo
+               alert('Ativou o mouse sobre'); 
+                       
+           });
+        });
+    </script> -->
+    
+    <!-- <script>
+        $(document).ready(function() {
+            $('#botao').hover(function () {
+                $(this).text('Saiu o mouse');
+            },
+               function () {
+                    $(this).text('saiu o mouse');
+               }
+            );
+        });
+    </script> -->
+   
+</body>
+</html>
