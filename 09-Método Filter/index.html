@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método Filter</title>
+    <style>
+        table {
+            font-family: arial, sans-serif; 
+            border-collapse: collapse; 
+            margin-left: 10%;
+            width: 80%;
+        }
+
+        td,
+        th {
+            border: 1px solid #ccc;
+            text-align: center; 
+            padding: 8px; 
+        }
+        input {
+            margin-left: 10%;
+            margin-bottom: 1%; 
+            padding: 8px;
+        }
+    </style>
+
+</head>
+<body>
+    <input id="busca" type="text" placeholder="Busca da Tabela">
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Sobrenome</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody id="MinhaTabela">
+            <tr>
+                <td>Dimitri</td>
+                <td>Teixeira</td>
+                <td>dimitri@exemplo.com</td>
+            </tr>
+            <tr>
+                <td>Maria</td>
+                <td>da Silva</td>
+                <td>maria@mail.com</td>   
+            </tr>
+            <tr>
+                <td>Julia</td>
+                <td>Santos</td>
+                <td>july@teste.com</td>
+           </tr>
+           <tr>
+                <td>Javascript</td>
+                <td>Jquery</td>
+                <td>kkk@test.com</td>
+           </tr>
+        </tbody>
+    </table>
+    <script src="js/jquery-3.6.4.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#busca').on('keyup', function () { 
+                var valor = $(this).val().toLowerCase(); 
+                
+                
+                $("#MinhaTabela tr").filter(function(){
+                    $(this).toggle($(this).text().toLocaleLower().indexOf(valor) > - 1);
+                })
+
+            });
+
+        });
+
+        $('#busca2').keyup(function () { 
+
+            var valor = $(this).val().toLowerCase();
+
+            $("#lista li").filter(function () {
+                 $(this).toggle($(this).text().toLocaleLowerCase().indexOf(valor) > - 1);
+                })
+            });
+            
+        });
+               
+    </script>
+    
+</body>
+</html>

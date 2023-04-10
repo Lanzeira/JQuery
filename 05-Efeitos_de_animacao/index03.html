@@ -31,6 +31,8 @@
         .green {
             background-color: green;
         }
+        
+       
 
 
     </style>
@@ -38,25 +40,15 @@
 <body>
 
     <div class="d-inline red"></div>
-    <div class="d-inline blue"></div>
-    <div class="d-inline green"></div>
-    
-    <hr>
-    
-    <button id="botao">Clique aqui</button>
-   
-
-
+              
     <script src="js/jquery-3.6.4.js"></script>
 
     <script>
         $(document).ready(function () {
-            $("#botao").click(function() {
-               $('.blue').toggle(2000, function(){
-                   alert('Terminou de esconder');
-               });
+            $('.red').click(function() {
+               $('this').css('background-color', 'blue').slideUp(2000).slideDown(2000);
+              
             });
-            
         });
     </script>
     

@@ -31,32 +31,38 @@
         .green {
             background-color: green;
         }
+        #flip,#panel {
+            padding: 5px;
+            text-align: center;
+            background-color: blue;
+            color: white;
+            cursor: pointer;
+        }
+        #panel {
+            display: none;
+            padding: 50px;
+
+        }
 
 
     </style>
 </head>
 <body>
 
-    <div class="d-inline red"></div>
-    <div class="d-inline blue"></div>
-    <div class="d-inline green"></div>
-    
+    <div id="flip">Clique aqui para aparecer painel</div>
+    <div id="panel">Painel Oculto</div>
+        
     <hr>
-    
-    <button id="botao">Clique aqui</button>
-   
-
-
+        
     <script src="js/jquery-3.6.4.js"></script>
 
     <script>
         $(document).ready(function () {
-            $("#botao").click(function() {
-               $('.blue').toggle(2000, function(){
-                   alert('Terminou de esconder');
-               });
+            $('#flip').click(function() {
+               $('#panel').slideDown('slow');
+
+               
             });
-            
         });
     </script>
     

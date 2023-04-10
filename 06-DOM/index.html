@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulando o DOM</title>
+</head>
+<body>
+    <h1>O JQuery pode manipular o DOM</h1>
+    <h2> DOM = Document Object Model Modelo de Objeto de Documento</h2>
+    <p>Em outras palavras é a árvore de elementos do nosso código. O jQuery pode acessar e atualizem dinamicamente o conteúdo, a estrutura e o estilo de um documento.<br> Tudo pode ser modificado, adicionado ou removido usando jQuery.</p>
+    
+    <input id="texto" type="text" placeholder="Digite seu texto aqui">
+    <br><br>
+
+    <script src="js/jquery-3.6.4.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#texto').blur(function () {
+               var valor = $(this).val();
+               alert('Foi Digitado' + valor);
+            })
+        });
+    </script>          
+</body>
+</html>
